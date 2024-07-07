@@ -1,0 +1,14 @@
+﻿Build started 09/06/2024 12:25:58 pm.
+     1>Project "c:\Users\rukham khalid\documents\visual studio 2012\Projects\message\message\message.vcxproj" on node 2 (Build target(s)).
+     1>_MASM:
+         Assembling printmessage.asm...
+         cmd.exe /C "C:\Users\Rukham Khalid\AppData\Local\Temp\tmpa142c5a3f0924ad0a5d75e50fd34ef93.cmd"
+         ml.exe /c /nologo /Zi /Fo"Debug\printmessage.obj" /I "C:\Irvine" /W3 /errorReport:prompt  /Taprintmessage.asm
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\rukham khalid\documents\visual studio 2012\Projects\message\Debug\message.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Irvine irvine32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"c:\users\rukham khalid\documents\visual studio 2012\Projects\message\Debug\message.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\rukham khalid\documents\visual studio 2012\Projects\message\Debug\message.lib" /MACHINE:X86 Debug\printmessage.obj
+         message.vcxproj -> c:\users\rukham khalid\documents\visual studio 2012\Projects\message\Debug\message.exe
+     1>Done Building Project "c:\Users\rukham khalid\documents\visual studio 2012\Projects\message\message\message.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.03

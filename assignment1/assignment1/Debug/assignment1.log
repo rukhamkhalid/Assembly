@@ -1,0 +1,13 @@
+﻿Build started 11/06/2024 5:20:36 pm.
+     1>Project "C:\Users\Rukham Khalid\Documents\Visual Studio 2012\Projects\assignment1\assignment1\assignment1.vcxproj" on node 2 (Build target(s)).
+     1>_MASM:
+         Assembling test.asm...
+         cmd.exe /C "C:\Users\Rukham Khalid\AppData\Local\Temp\tmp2c4e417539ff41779fefbede63776516.cmd"
+         ml.exe /c /nologo /Zi /Fo"Debug\test.obj" /I "c:\Irvine" /W3 /errorReport:prompt  /Tatest.asm
+     1>test.asm(9): fatal error A1010: unmatched block nesting : main
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\BuildCustomizations\masm.targets(49,5): error MSB3721: The command "ml.exe /c /nologo /Zi /Fo"Debug\test.obj" /I "c:\Irvine" /W3 /errorReport:prompt  /Tatest.asm" exited with code 1.
+     1>Done Building Project "C:\Users\Rukham Khalid\Documents\Visual Studio 2012\Projects\assignment1\assignment1\assignment1.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.56

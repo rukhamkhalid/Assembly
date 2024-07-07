@@ -1,0 +1,13 @@
+﻿Build started 12/06/2024 4:04:21 pm.
+     1>Project "c:\Users\rukham khalid\documents\visual studio 2012\Projects\colorstring\colorstring\colorstring.vcxproj" on node 2 (Build target(s)).
+     1>_MASM:
+         Assembling color.asm...
+         cmd.exe /C "C:\Users\Rukham Khalid\AppData\Local\Temp\tmp3d9589b024604e3da499495c9c553f18.cmd"
+         ml.exe /c /nologo /Zi /Fo"Debug\color.obj" /I "C:\Irvine" /W3 /errorReport:prompt  /Tacolor.asm
+     1>color.asm(11): fatal error A1010: unmatched block nesting : main
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\BuildCustomizations\masm.targets(49,5): error MSB3721: The command "ml.exe /c /nologo /Zi /Fo"Debug\color.obj" /I "C:\Irvine" /W3 /errorReport:prompt  /Tacolor.asm" exited with code 1.
+     1>Done Building Project "c:\Users\rukham khalid\documents\visual studio 2012\Projects\colorstring\colorstring\colorstring.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.60

@@ -1,0 +1,13 @@
+﻿Build started 29/06/2024 9:46:31 am.
+     1>Project "C:\Users\Rukham Khalid\Desktop\209\user_value\constant\constant.vcxproj" on node 2 (Build target(s)).
+     1>_MASM:
+         Assembling sum.asm...
+         cmd.exe /C "C:\Users\Rukham Khalid\AppData\Local\Temp\tmpb939bfc2280c4a7d91da5b85ef870216.cmd"
+         ml.exe /c /nologo /Zi /Fo"Debug\sum.obj" /I "C:\Irvine" /W3 /errorReport:prompt  /Tasum.asm
+     1>sum.asm(29): error A2008: syntax error : ]
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\BuildCustomizations\masm.targets(49,5): error MSB3721: The command "ml.exe /c /nologo /Zi /Fo"Debug\sum.obj" /I "C:\Irvine" /W3 /errorReport:prompt  /Tasum.asm" exited with code 1.
+     1>Done Building Project "C:\Users\Rukham Khalid\Desktop\209\user_value\constant\constant.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.47

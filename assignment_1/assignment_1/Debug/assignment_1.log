@@ -1,0 +1,14 @@
+﻿Build started 09/06/2024 12:08:18 pm.
+     1>Project "c:\Users\rukham khalid\documents\visual studio 2012\Projects\assignment_1\assignment_1\assignment_1.vcxproj" on node 2 (Build target(s)).
+     1>_MASM:
+         Assembling work1.asm...
+         cmd.exe /C "C:\Users\Rukham Khalid\AppData\Local\Temp\tmp59da79c488d947b387cb668fceff81dd.cmd"
+         ml.exe /c /nologo /Zi /Fo"Debug\work1.obj" /I "C:\Irvine" /W3 /errorReport:prompt  /Tawork1.asm
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\rukham khalid\documents\visual studio 2012\Projects\assignment_1\Debug\assignment_1.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Irvine irvine32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"c:\users\rukham khalid\documents\visual studio 2012\Projects\assignment_1\Debug\assignment_1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\rukham khalid\documents\visual studio 2012\Projects\assignment_1\Debug\assignment_1.lib" /MACHINE:X86 Debug\work1.obj
+         assignment_1.vcxproj -> c:\users\rukham khalid\documents\visual studio 2012\Projects\assignment_1\Debug\assignment_1.exe
+     1>Done Building Project "c:\Users\rukham khalid\documents\visual studio 2012\Projects\assignment_1\assignment_1\assignment_1.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.04

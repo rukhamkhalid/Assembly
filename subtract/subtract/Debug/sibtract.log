@@ -1,0 +1,14 @@
+﻿Build started 12/06/2024 3:31:11 pm.
+     1>Project "c:\Users\rukham khalid\documents\visual studio 2012\Projects\sibtract\sibtract\sibtract.vcxproj" on node 2 (Build target(s)).
+     1>_MASM:
+         Assembling subuser.asm...
+         cmd.exe /C "C:\Users\Rukham Khalid\AppData\Local\Temp\tmp076419ff8c8e41ca803b4408cf2e9551.cmd"
+         ml.exe /c /nologo /Zi /Fo"Debug\subuser.obj" /I "C:\Irvine" /W3 /errorReport:prompt  /Tasubuser.asm
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\rukham khalid\documents\visual studio 2012\Projects\sibtract\Debug\sibtract.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Irvine irvine32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"c:\users\rukham khalid\documents\visual studio 2012\Projects\sibtract\Debug\sibtract.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\rukham khalid\documents\visual studio 2012\Projects\sibtract\Debug\sibtract.lib" /MACHINE:X86 Debug\subuser.obj
+         sibtract.vcxproj -> c:\users\rukham khalid\documents\visual studio 2012\Projects\sibtract\Debug\sibtract.exe
+     1>Done Building Project "c:\Users\rukham khalid\documents\visual studio 2012\Projects\sibtract\sibtract\sibtract.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.73
