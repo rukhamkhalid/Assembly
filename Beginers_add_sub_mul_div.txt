@@ -1,0 +1,420 @@
+;Program to add three constants values
+include irvine32.inc
+.data
+.code
+main proc
+mov eax,5
+mov ebx,10
+mov ecx,5
+mov edx,20
+add eax,ecx
+add edx,eax
+add ebx,edx
+call writeint   ;call dumpregs
+exit
+main endp
+end main
+
+
+;first program to add two variables
+include irvine32.inc
+.data
+ var1 dword 5
+ var2 dword 12
+.code
+main proc
+ mov eax,var1
+ mov eax,var2
+ call dumregs
+ exit 
+main endp
+end main
+
+
+;program to input integer from user
+include irvine32.inc
+.data
+ msg1 byte "Enter your age:",0
+ msg2 byte "Your age is:",0
+.code
+main proc
+  mov edx,offset msg1
+  call writestring
+  call readint
+  mov edx,offset msg2
+  call writestring
+  call writeint
+  call crlf
+  exit
+  main endp
+  end main 
+
+;input from user user 
+include irvine32.inc
+.data
+msg1 byte "enter 1st no=",0
+msg2 byte "enter 2nd no=",0
+msg3 byte "sum is=",0
+.code
+ main proc
+mov edx,offset msg1
+call writestring
+call readint 
+mov ebx,eax
+call crlf
+mov edx,offset msg2
+call writestring
+call readint
+add eax,ebx
+call crlf
+mov edx,offset msg3
+call writestring
+call writeint
+call crlf
+ exit
+ main endp 
+ end main
+
+
+
+;inc/dec
+.data
+var2 dd 5
+.code
+main proc
+     inc var2                   ;mov eax,16  dec eax
+    mov eax,var2
+   call dumpregs
+   exit
+   main endp 
+   end main
+
+
+;text color&background
+include irvine32.inc
+.data
+ msg1 byte "assembly is intersting..",0
+.code
+main proc
+  mov eax,yellow
+call settextcolor  ;mov eax,blue+(green*16)..backgroundcolorchange
+mov edx,offset msg1 
+call writestring
+call crlf
+exit 
+main endp
+end main
+
+
+;imul multiplication
+include irvine32.inc
+.code main proc
+mov eax,-5
+mov ebx,2
+imul eax,ebx  ;mul ebx
+
+
+;div from user value
+include irvine32.inc
+
+.data
+
+msg1 byte "Enter the 1st value=",0
+msg2 byte "Enter the 2nd value=",0
+msg3 byte "Division is=",0
+.code
+
+main proc
+
+	mov edx,offset msg1
+	call writestring
+	call readint
+	mov ebx,eax
+	call crlf          ;\n
+	mov edx,offset msg2
+	call writestring
+	call readint
+	
+	mov edx,0
+	div ebx
+	call crlf          ;\n
+	mov edx,offset msg3
+	call writestring
+	call writeint
+	call crlf          ;\n
+
+        exit
+        main endp
+        end main
+
+
+
+include irvine32.inc
+
+.code
+main PROC
+
+	mov eax,50
+	mov ebx,10
+	mov edx,0
+	idiv eax,ebx
+	call writeint
+	
+	
+	call DumpRegs
+
+	exit
+        main endp
+        end main
+ 
+
+include irvine32.inc
+.code
+	main proc
+	mov eax,5
+	mov  ebx,10
+	sub eax,ebx
+	mov  ecx,2
+	mov  edx,7
+	sub edx,ecx
+	sub eax,edx
+	mov esi, 8
+	sub eax,esi
+	call writeint
+	exit
+	main endp
+	end main
+
+
+
+include irvine32.inc
+.code
+	main proc
+	mov eax,5
+	mov  ebx,10
+	imul eax,ebx
+	mov  ecx,2
+	mov  edx,7
+	imul edx,ecx
+	imul eax,edx
+	mov esi, 8
+	imul eax,esi
+	call writeint
+	call crlf
+	exit
+	main endp
+	end main
+
+
+include irvine32.inc
+.data
+ var1 dword 55
+ var2 dword 5
+ .code
+	main proc
+	mov  eax,cyan
+	call settextcolor
+	mov eax,var1
+	mov ebx,var2
+	mov edx,0
+	div ebx
+	call writeint
+	call crlf
+	exit
+	main endp
+	end main
+
+
+;string 
+include irvine32.inc
+.data
+ msg1 byte "Enter your Name=",0
+ stdname byte 50 dup (?)
+ msg2 byte "Your Name=",0
+ .code
+	main proc
+	mov edx,offset msg1
+	call writestring
+	mov edx,offset stdname
+	mov ecx,sizeof stdname - 1
+	call readstring
+	mov edx,offset msg2
+	call writestring
+	mov edx,offset stdname
+	call writestring
+	call crlf 
+	call writeint
+	call crlf
+	exit
+	main endp
+	end main
+
+
+
+;sub 
+include irvine32.inc
+.code
+	main proc
+	mov eax,5
+	mov  ebx,10
+	sub eax,ebx
+	mov  ecx,2
+	mov  edx,7
+	sub edx,ecx
+	sub eax,edx
+	call writeint
+	exit
+	main endp
+	end main
+
+;add and increment decrement operation used
+	
+include irvine32.inc
+.code
+ mov eax,6
+mov ebx,8
+add eax,ebx
+call writeint
+call crlf
+inc eax
+call writeint
+call crlf
+dec  eax
+call writeint
+call crlf 
+exit 
+main endp
+end main
+
+;6 values addition
+include irvine32.inc
+.data
+  msg1 byte "Enter 1st number=",0
+  msg2 byte "Enter 2nd number=",0
+  msg3 byte "Enter 3rd number=",0
+  msg4 byte "Enter 4th number=",0
+  msg5 byte "Enter 5th number=",0
+  msg6 byte "Enter 6th number=",0
+  msg7 byte "Addition=",0
+	.code
+	main proc
+	mov edx,offset msg1
+	call writestring
+	call readint
+	mov ebx,eax
+	mov edx,offset msg2
+	call writestring
+	call readint
+	mov ecx,eax
+	add ebx,ecx
+	mov edx,offset msg3
+	call writestring
+	call readint
+	mov ecx,eax
+	add ebx,ecx
+	mov edx,offset msg4
+	call writestring
+	call readint
+	mov ecx,eax
+	add ecx,ebx
+	mov edx,offset msg5
+	call writestring
+	call readint
+	mov ebx,eax
+	add ebx,ecx
+	mov edx,offset msg6
+	call writestring
+	call readint
+	add eax,ebx
+	mov edx,offset msg7
+	call writestring
+	call writeint
+	exit 
+	main endp
+	end main
+	
+
+;6 value multiply
+include irvine32.inc
+.data
+  msg1 byte "Enter 1st number=",0
+  msg2 byte "Enter 2nd number=",0
+  msg3 byte "Enter 3rd number=",0
+  msg4 byte "Enter 4th number=",0
+  msg5 byte "Enter 5th number=",0
+  msg6 byte "Enter 6th number=",0
+  msg7 byte "multiply=",0
+	.code
+	main proc
+	mov edx,offset msg1
+	call writestring
+	call readint
+	mov ebx,eax
+	mov edx,offset msg2
+	call writestring
+	call readint
+	mov ecx,eax
+	imul ebx,ecx
+	mov edx,offset msg3
+	call writestring
+	call readint
+	mov ecx,eax
+	imul ebx,ecx
+	mov edx,offset msg4
+	call writestring
+	call readint
+	mov ecx,eax
+	imul ecx,ebx
+	mov edx,offset msg5
+	call writestring
+	call readint
+	mov ebx,eax
+	imul ebx,ecx
+	mov edx,offset msg6
+	call writestring
+	call readint
+	imul eax,ebx
+	mov edx,offset msg7
+	call writestring
+	call writeint
+	exit 
+	main endp
+	end main
+
+
+;subtract operation perform in 4 values
+include irvine32.inc
+.data
+ msg1 byte "Enter first number=",0
+ msg2 byte "Enter second number=",0
+ msg3 byte "Enter third number=",0
+ msg4 byte "Enter fourth number=",0
+ msg5 byte "sub=",0
+	.code
+	main proc
+		mov edx,offset msg1
+		call writestring
+		call readint
+		mov ebx,eax
+		mov edx,offset msg2
+		call writestring
+		call readint
+		mov ecx,eax
+		sub ebx,ecx
+		mov edx,offset msg3
+		call writestring
+		call readint
+		mov edx,eax
+		sub ebx,edx
+		mov edx,offset msg4
+		call writestring
+		call readint
+		sub eax,ebx
+		mov edx,offset msg5
+		call writestring
+		call writeint
+		call crlf
+		exit
+		main endp
+		end main
+	

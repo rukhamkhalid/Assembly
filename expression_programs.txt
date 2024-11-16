@@ -1,0 +1,225 @@
+;Rval=-Xval+(Yval-Zval)
+include irvine32.inc
+.data
+ Xval DWORD 26
+ Yval DWORD 30
+ Zval DWORD 40
+ Rval DWORD ?
+
+.code
+	main PROC
+		mov eax,Xval
+		neg eax
+		mov ebx,Yval
+		sub ebx,Zval
+		add eax,ebx
+		mov Rval,eax
+		
+		call writeint
+		call crlf
+		EXIT
+		main ENDP
+		END main
+
+
+;c=F-32*5/9
+include irvine32.inc
+.data
+	faren dword 41
+	celcius dword ?
+	.code
+	 main proc
+		mov eax,faren
+		sub eax,32
+		imul eax,5
+		mov ebx,9
+		mov edx,0
+		div ebx
+              mov ceclius,ebx
+
+		call writeint
+		call crlf
+		exit 
+		main endp
+		end main
+
+
+include irvine32.inc
+.data
+	faren dword 80
+	celcius dword ?
+	.code
+	 main proc
+		mov eax,faren
+		sub eax,32
+		mov ecx,ebx
+		mov edx,0
+		mov ebx,9
+		mov eax,5
+		div ebx
+		mov ebx,ecx
+		imul eax,ebx
+		mov celcius,eax
+		
+		call writeint
+		call crlf
+		exit 
+		main endp
+		end main
+
+;var1=(var1+var2)-(var3+var4)
+INCLUDE irvine32.inc
+.data
+	var1 dword 5
+	var2 dword 5
+	var3 dword 1
+	var4 dword 2
+	.code
+	 main proc
+		mov eax,var1
+		add  eax,var2
+		mov ebx,var3
+		add ebx,var4
+		sub eax,ebx
+		mov var1,eax
+		
+		call writeint
+		call crlf
+		exit 
+		main endp
+		end main
+ 
+
+;max minimum	
+include irvine32.inc
+
+.data
+    msg1 byte "Enter the first number: ", 0
+    msg2 byte "Enter the second number: ", 0
+    msg3 byte "Enter the third number: ", 0
+    minMsg byte "Minimum number is: ", 0
+    maxMsg byte "Maximum number is: ", 0
+    num1 dword ?
+    num2 dword ?
+    num3 dword ?
+
+.code
+main proc
+    ; Prompt for the first number
+    mov edx, offset msg1
+    call writestring
+    call readint
+    mov num1, eax              ; Store first number in num1
+
+    ; Prompt for the second number
+    mov edx, offset msg2
+    call writestring
+    call readint
+    mov num2, eax              ; Store second number in num2
+
+    ; Prompt for the third number
+    mov edx, offset msg3
+    call writestring
+    call readint
+    mov num3, eax	           ; Store third number in num3
+							 
+    ; Finding Maximum
+    mov eax, num1
+    mov ebx, num2
+    mov ecx, num3
+
+    .if (eax > ebx)
+        .if (eax > ecx)
+            mov edx, offset maxMsg
+            call writestring
+            call writedec  ; Display max (num1)
+            call crlf
+        .else
+            mov edx, offset maxMsg
+            call writestring
+            mov eax, ecx   ; Display max (num3)
+            call writedec
+            call crlf
+        .endif
+    .else
+        .if (ebx > ecx)
+            mov edx, offset maxMsg
+            call writestring
+            mov eax, ebx   ; Display max (num2)
+            call writedec
+            call crlf
+        .else
+            mov edx, offset maxMsg
+            call writestring
+            mov eax, ecx   ; Display max (num3)
+            call writedec
+            call crlf
+        .endif
+    .endif
+
+    ; Finding Minimum
+    mov eax, num1
+    mov ebx, num2
+    mov ecx, num3
+
+    .if (eax < ebx)
+        .if (eax < ecx)
+            mov edx, offset minMsg
+            call writestring
+            call writedec  ; Display min (num1)
+            call crlf
+        .else
+            mov edx, offset minMsg
+            call writestring
+            mov eax, ecx   ; Display min (num3)
+            call writedec
+            call crlf
+        .endif
+    .else
+        .if (ebx < ecx)
+            mov edx, offset minMsg
+            call writestring
+            mov eax, ebx   ; Display min (num2)
+            call writedec
+            call crlf
+        .else
+            mov edx, offset minMsg
+            call writestring
+            mov eax, ecx   ; Display min (num3)
+            call writedec
+            call crlf
+        .endif
+    .endif
+
+    exit
+main endp
+end main
+//even odd user
+include irvine32.inc
+.data
+msg byte "Enter num:",0
+msg1 byte "Even",0
+msg2 byte "ODD",0
+.code 
+main proc
+ mov edx,offset msg
+ call writestring
+ call readint
+ mov edx,0
+ mov ecx,2
+ div ecx
+ .if(edx==0)
+ 
+ mov edx,offset msg1
+ call writestring
+ call crlf
+ .else
+ mov edx,offset msg2
+ call writestring
+ call crlf
+ .endif
+ exit
+ main endp
+ end main
+
+

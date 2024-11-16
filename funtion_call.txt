@@ -1,0 +1,134 @@
+
+
+;function in assembly
+include irvine32.inc
+
+.data 
+
+var1 dword 4
+var2 dword 2
+var3 dword 5
+.code 
+
+main proc
+ 
+call sum
+call subt
+call mult
+call divide
+exit
+main endp
+
+
+sum proc 
+mov eax,var1
+mov ebx,var2
+add eax,ebx
+call writeint
+call crlf
+ret
+sum endp
+ 
+subt proc 
+mov eax,var1
+mov ebx,var2
+sub eax,ebx
+call writeint
+call crlf
+ret
+subt endp
+
+mult proc 
+mov eax,var1
+mov ebx,var2
+imul eax,ebx
+call writeint
+call crlf
+ret
+mult endp
+
+divide proc 
+mov eax,var3
+mov ebx,var2
+mov edx,0
+div ebx
+call writeint
+call crlf
+ret
+divide endp
+end main
+
+ 
+;function user values
+include irvine32.inc
+
+.data 
+msg byte "Enter first number=",0
+msg1 byte "Enter second number=",0
+msg2 byte "addition=",0
+msg3 byte "subtract=",0
+msg4 byte "multiplication=",0
+msg5 byte "Divide=",0
+.code 
+
+main proc
+ mov edx,offset msg
+ call writestring
+ call readint
+ mov ebx,eax
+ mov edx,offset msg1
+ call writestring
+ call readint
+ mov ecx,eax
+ 
+call sum
+call subt
+call mult
+call divide
+exit
+main endp
+
+
+sum proc 
+ mov edx,offset msg2
+ call writestring
+mov eax,ebx
+add eax,ecx
+call writeint
+call crlf
+ret
+sum endp
+
+subt proc 
+ mov edx,offset msg3
+ call writestring
+mov eax,ebx
+sub eax,ecx
+call writeint 
+call crlf
+ret
+subt endp
+
+mult proc
+ mov edx,offset msg4
+ call writestring 
+mov eax,ebx
+imul eax,ecx
+call writeint
+call crlf
+ret
+mult endp
+
+divide proc 
+ mov edx,offset msg5
+ call writestring
+ 
+mov eax,ebx
+mov edx,0
+div ecx
+call writeint
+call crlf
+ret
+divide endp
+end main
+

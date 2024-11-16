@@ -1,0 +1,124 @@
+
+
+ 
+
+
+;factorial
+include irvine32.inc
+.data
+msg byte "Enter Number=",0
+.code	
+	main proc
+	mov edx,offset msg
+	call writestring
+	call readint
+	mov ecx,eax
+	mov eax,1
+	fact:
+	mul ecx
+	loop fact
+	call writedec
+	call crlf
+	exit
+	main endp
+	end main
+;sum of series
+include irvine32.inc
+.data
+msg byte "Enter Number=",0
+.code	
+	main proc
+	mov edx,offset msg
+	call writestring
+	call readint
+	mov ecx,eax
+	mov eax,0
+	sum:
+	add eax,ecx
+	loop sum
+	call writedec
+	call crlf
+	exit
+	main endp
+	end main
+
+
+;fabonaci series
+include irvine32.inc
+.data
+msg byte "Enter Number=",0
+.code	
+	main proc
+	mov edx,offset msg
+     call writestring
+	 call readint
+	 mov ecx,eax
+	 mov edx,0
+	 mov ebx,1
+	 mov eax,0
+	 fib:
+	 add edx,ebx
+	 mov eax,edx
+	call writeint
+	call crlf
+	mov eax,ebx
+	mov ebx,edx
+	mov edx,eax
+	loop fib
+	exit
+	main endp
+	end main	 
+
+;using loop aesteric print
+include irvine32.inc
+
+.data
+x1 byte "*",0
+x2 dword 1
+save dword ?
+.code
+main proc
+
+mov ecx,5
+l1:
+mov save,ecx
+mov ecx,x2
+l2:
+mov edx,offset x1
+call writestring
+loop l2
+call crlf
+inc x2
+mov ecx,save
+loop l1
+
+exit
+main endp
+end main
+
+;aesteric
+include irvine32.inc
+
+.data
+x1 byte "*",0
+x2 dword 5
+save dword ?
+.code
+main proc
+
+mov ecx,5
+l1:
+mov save,ecx
+mov ecx,x2
+l2:
+mov edx,offset x1
+call writestring
+loop l2
+call crlf
+dec x2
+mov ecx,save
+loop l1
+
+exit
+main endp
+end main

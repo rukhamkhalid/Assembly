@@ -1,0 +1,309 @@
+;Print*****
+include irvine32.inc
+
+.data 
+ast byte "*", 0
+
+.code 
+
+main proc
+	mov eax, 5
+	.while eax<=5
+		mov ebx, 1
+		.while ebx<=eax
+			mov edx, offset ast
+			call writestring
+			inc ebx
+		.endw
+		call crlf
+		dec eax
+	.endw
+		exit
+	main endp
+end main
+ 
+;enter length aesteric
+ include irvine32.inc
+
+.data 
+ast byte "*", 0
+msg1 byte "Enter length=",0
+.code 
+
+main proc
+	mov edx, offset msg1
+	call writestring
+	call readint
+	mov ecx,eax
+	mov eax,1
+	.while eax<=ecx
+		mov ebx, 1
+		.while ebx<=eax
+			mov edx, offset ast
+			call writestring
+			inc ebx
+		.endw
+		call crlf
+		inc eax
+	.endw
+		exit
+	main endp
+end main
+ 
+;*****
+ include irvine32.inc
+
+.data 
+ast byte "*", 0
+msg1 byte "Enter length=",0
+.code 
+
+main proc
+	mov edx, offset msg1
+	call writestring
+	call readint
+	mov ecx,eax
+	mov eax,5
+	.while eax<=ecx
+		mov ebx, 1
+		.while ebx<=eax
+			mov edx, offset ast
+			call writestring
+			inc ebx
+		.endw
+		call crlf
+		dec eax
+	.endw
+		exit
+	main endp
+end main
+ 
+;print number using nested 12345
+include irvine32.inc
+
+.code
+main proc
+    mov ecx, 1           
+    .while ecx < 6         
+        mov ebx, 1        
+       
+        .while ebx <= ecx
+            mov eax, ebx   
+            call writedec  
+            inc ebx        
+        .endw
+
+        call crlf         
+        inc ecx            
+    .endw
+
+    exit
+main endp
+end main
+
+;table from user number 
+include irvine32.inc
+.data
+msg  byte "Input Table Number=", 0   
+msg1 byte " * ", 0                   
+msg2 byte " = ", 0                  
+.code
+main proc
+mov edx,offset msg
+call writestring
+call readint
+mov ecx,eax
+call crlf
+mov ebx,1
+.while ebx<=10
+     mov eax,ecx
+     call writedec   
+     mov edx,offset msg1
+     call writestring
+     mov eax,ebx
+     call writedec
+     mov edx,offset msg2
+     call writestring
+     mul ecx
+     call writedec
+     call crlf
+     inc ebx
+    .endw
+	exit
+	main endp
+	end main
+
+
+;even number
+include irvine32.inc
+.code
+ main proc
+ mov eax,0
+ .while(eax<=10)
+   call writeint
+   call crlf
+   inc eax
+   inc eax
+   .endw
+   exit
+   main endp
+   end main
+
+;odd  number
+include irvine32.inc
+.code
+ main proc
+		
+		mov eax,1  ;odd number
+	.while(eax<=10)
+		call writeint
+		call crlf
+		inc eax
+		inc eax
+	.endw
+	 exit
+	main endp
+	 end main
+
+;factorial while
+include irvine32.inc
+.data
+msg byte "Enter Number=",0
+.code	
+	main proc
+	mov edx,offset msg
+     call writestring
+	 call readint
+	 mov ebx,eax
+	 mov ecx,1
+	
+	.while(eax>0)
+
+	imul ecx,eax
+	dec eax
+	.endw
+	mov eax,ecx
+	call writeint
+	call crlf
+	
+	main endp
+	end main
+
+;sum of series using while	 
+include irvine32.inc
+.data
+msg byte "Enter Number=",0
+.code	
+	main proc
+	mov edx,offset msg
+     call writestring
+	 call readint
+	 mov ebx,eax
+	 mov ecx,0
+	.while(eax>0)
+	 add ecx,eax
+	 dec eax
+	.endw
+	mov eax,ecx
+	call writeint
+	call crlf
+	exit
+	main endp
+	end main
+
+
+;table 6
+
+include irvine32.inc
+.data
+n dword 6               
+msg1 byte " * ", 0      
+msg2 byte " = ", 0     
+.code
+main proc
+    mov ebx, 1          
+
+    .while ebx <= 10
+        mov eax, n       
+        call writedec   
+        mov edx, offset msg1
+        call writestring
+        
+        mov eax, ebx     
+        call writedec    
+        
+        mov edx, offset msg2
+        call writestring 
+        
+        mov eax, n       
+        mul ebx          
+        call writedec    
+        
+        call crlf        
+        inc ebx         
+    .endw
+
+    exit
+main endp
+end main
+
+
+;traingle print
+include irvine32.inc
+.data 
+ast byte "*", 0
+.code 
+
+main proc
+	mov eax, 1
+	.while eax<=5
+		mov ebx, 1
+		.while ebx<=5
+			mov edx, offset ast
+			call writestring
+			inc ebx
+		.endw
+		call crlf
+		inc eax
+	.endw
+        exit
+	main endp
+        end main
+
+;user table length
+include irvine32.inc
+.data
+msg  byte "Input Table Number=", 0  
+msg1 byte "Enter length:",0
+msg2 byte " * ", 0                   
+msg3 byte " = ", 0                  
+.code
+main proc
+mov edx,offset msg
+call writestring
+call readint
+mov ecx,eax
+mov edx,offset msg1
+call writestring
+call  readint
+mov esi,eax
+call crlf
+mov ebx,1
+.while ebx<=esi
+     mov eax,ecx
+	 call writedec
+          
+        mov edx,offset msg2
+		call writestring
+		mov eax,ebx
+		call writedec
+		mov edx,offset msg3
+		call writestring
+	    mul ecx
+		call writedec
+		call crlf
+			inc ebx
+    .endw
+	exit
+	main endp
+	end main
